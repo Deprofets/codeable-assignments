@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap");
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #edf2f7;
+  text-align: center;
+  /* --font: "Nunito", sans-serif; */
+}
+
+form {
+  max-width: 443px;
+  margin: 134px auto;
+}
+
+input {
+  padding: 11px 7px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  line-height: 22px;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+select {
+  padding: 11px 7px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  line-height: 22px;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+.form-select {
+  border-radius: 4px;
+  border: 1px solid #000000;
+  position: relative;
+}
+
+.form-select::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+  display: block;
+  width: 32px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+    center center no-repeat;
+  box-sizing: border-box;
+}
+
+option {
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Nunito", sans-serif;
+}
+input::placeholder {
+  font-family: "Nunito", sans-serif;
+  color: #9a9a9a;
+  font-size: 16px;
+  line-height: 22px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  vertical-align: text-top;
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 45px;
+  font-size: 32px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.form-group-label {
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.form-group-label.form-optional::after {
+  padding-left: 4px;
+  content: "(Optional)";
+  font-size: 12px;
+  line-height: 20px;
+  color: #4a5568;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.form-checkbox {
+  text-transform: capitalize;
+}
+
+button {
+  padding: 8px 0;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background: #718096;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 22px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}

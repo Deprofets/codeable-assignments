@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form>
+        <h1>Ready to get started?</h1>
+        <p>Prepare to join one of the top layer communities</p>
+        <div class="form-group">
+            <label class="form-group-label" for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" required>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" required>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="password">Password </label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="zip_code">Zip Code</label>
+            <input type="text" placeholder="123456" pattern="\d{6}" name="zip_code" id="zip_code" required>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="practicing_status">Practicing Status</label>
+            <div class="form-select">
+                <select name="practicing_status" id="practicing_status" required>
+                    <option value="0">Practicing Lawyer</option>
+                    <option value="1">Non Practicing Lawyer</option>
+                    <option value="2">Retired Lawyer</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="legal_expertise">Area of legal
+                expertise</label>
+            <div class="form-select">
+                <select name="legal_expertise" id="legal_expertise">
+                    <option value="antitrust">
+                        Antitrust
+                    </option>
+                    <option value="civil_rights">
+                        Civil Rights
+                    </option>
+                    <option value="immigration">
+                        Immigration
+                    </option>
+                    <option value="memes">
+                        Memes
+                    </option>
+                    <option value="gaming">
+                        Gaming
+                    </option>
+                    <option value="pretending_to_work">
+                        Pretending to work
+                    </option>
+                    <option selected value="other">
+                        Other
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label" for="years_of_experience">Years of
+                experience</label>
+            <input type="number" max="60" min="0" name="years_of_experience" id="years_of_experience" required>
+        </div>
+        <div class="form-group">
+            <p class="form-group-label form-optional">
+                Ethnicity
+            </p>
+            <label><input type="radio" name="ethnicity" value="earthling" checked>Earthling</label>
+            <label><input type="radio" name="ethnicity" value="martian">Martian</label>
+            <label><input type="radio" name="ethnicity" value="asgardian">Asgardian</label>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label form-optional" for="languages">Languages</label><select name="languages"
+                id="languages" multiple>
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="do">Dothraki</option>
+                <option value="ky">Kryptonese</option>
+                <option value="kl">Klingon</option>
+                <option value="vu">Vulcan</option>
+                <option value="ali">Alienese</option>
+                <option value="el">Elvish</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-group-label form-optional" for="phone_number">Cell Phone Number</label>
+            <input type="text" pattern="\d{9}" placeholder="#######" name="phone_number" id="phone_number">
+        </div>
+        <div class="form-group">
+            <label class="form-checkbox"><input type="checkbox" name="terms_of_use" id="terms_of_use" required>I swear
+                that I totally read the terms of use</label>
+        </div>
+        <button type="submit">Create your account</button>
+    </form>
+</body>
+
+</html>
