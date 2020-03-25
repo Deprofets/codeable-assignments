@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <aside>
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M0 24C0 37.2548 10.7452 48 24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24ZM25.2303 28.2602C25.0599 28.2602 24.932 28.1324 24.9604 27.9478L26.5657 18.4055C26.5799 18.2777 26.7077 18.1783 26.8214 18.1783H27.0487C27.1197 18.1783 27.2475 18.2351 27.2902 18.3203L30.5859 24.4546H30.6143L33.9101 18.3203C33.9527 18.2351 34.0805 18.1783 34.1516 18.1783H34.3788C34.4925 18.1783 34.6203 18.2777 34.6345 18.4055L36.2398 27.9478C36.2682 28.1324 36.1404 28.2602 35.9699 28.2602H34.2936C34.1658 28.2602 34.0379 28.1466 34.0237 28.033L33.3844 23.6452H33.356L30.9695 28.246C30.9268 28.3312 30.799 28.4022 30.728 28.4022H30.4723C30.387 28.4022 30.2734 28.3312 30.2308 28.246L27.83 23.6452H27.8016L27.1765 28.033C27.1623 28.1466 27.0487 28.2602 26.9066 28.2602H25.2303ZM24.0675 15.0205L21.2601 31.3477C21.2186 31.5892 21.3808 31.8187 21.6224 31.8602C21.864 31.9017 22.0936 31.7395 22.1351 31.498L24.9425 15.1709C24.984 14.9293 24.8218 14.6999 24.5802 14.6584C24.3386 14.6169 24.109 14.779 24.0675 15.0205ZM15.4432 28.4022C12.6021 28.4022 10.3434 26.1444 10.3434 23.3044C10.3434 20.4644 12.6021 18.1783 15.4432 18.1783C18.2844 18.1783 20.5573 20.4644 20.5573 23.3044C20.5573 26.1444 18.2844 28.4022 15.4432 28.4022Z"
+                    fill="#333333" />
+                <path
+                    d="M12.5729 23.3993C12.5729 24.9471 13.8515 26.2251 15.3999 26.2251C16.9625 26.2251 18.241 24.9471 18.241 23.3993C18.241 21.8373 16.9625 20.5451 15.3999 20.5451C13.8515 20.5451 12.5729 21.8373 12.5729 23.3993Z"
+                    fill="#333333" />
+            </svg>
+            <nav class="side-nav">
+                <h2>Table UI Kit</h2>
+                <ul>
+                    <li class="link--active"><i class="icon i-clients"></i>Clients</li>
+                    <li><i class="icon i-sort"></i>Reports</li>
+                    <li><i class="icon i-cog"></i>Settings</li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <header>
+                <h1>Clients</h1>
+                <div class="header-actions">
+                    <button class="btn--light">Filter <i class="icon i-filter"></i></button><button
+                        class="btn--dark">Add New Client <i class="icon i-plus"></i></button>
+                </div>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th class="sort--down" scope="col">Company</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Revenue</th>
+                        <th scope="col">Tags</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_1">
+                                <label for="chosen_client_1"></label>
+                            </div>
+                        </td>
+                        <td>90584</td>
+                        <td>Kilgore Trout</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_2">
+                                <label for="chosen_client_2"></label>
+                            </div>
+                        </td>
+                        <td>31758</td>
+                        <td>Jessie Santos</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_3">
+                                <label for="chosen_client_3"></label>
+                            </div>
+                        </td>
+                        <td>72043</td>
+                        <td>Michael Hawkins</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_4">
+                                <label for="chosen_client_4"></label>
+                            </div>
+                        </td>
+                        <td>67641</td>
+                        <td>Marc Reed</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_5">
+                                <label for="chosen_client_5"></label>
+                            </div>
+                        </td>
+                        <td>5839</td>
+                        <td>Wayne Malone</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_6">
+                                <label for="chosen_client_6"></label>
+                            </div>
+                        </td>
+                        <td>36458</td>
+                        <td>Sylvia Homes</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_7">
+                                <label for="chosen_client_7"></label>
+                            </div>
+                        </td>
+                        <td>50216</td>
+                        <td>Eugenia King</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="radio-control">
+                                <input type="radio" name="chosen_client" id="chosen_client_8">
+                                <label for="chosen_client_8"></label>
+                            </div>
+                        </td>
+                        <td>68312</td>
+                        <td>Marie Schneider</td>
+                        <td>Breakfast of Champions</td>
+                        <td class="status--active">Active</td>
+                        <td>9/12/2017</td>
+                        <td>$3,321</td>
+                        <td>
+                            <span class="tag">Label</span>
+                            <span class="tag">Label</span>
+                        </td>
+                        <td>
+                            <button>
+                                <i class="icon i-more"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>
