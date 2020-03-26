@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery V1</title>
+    <style>
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+        }
+
+        .site-header {
+            margin-top: 133px;
+        }
+
+        .gallery {
+            display: grid;
+            grid: repeat(2, 1fr) / repeat(3, 1fr);
+            grid-row-gap: 16px;
+            margin-bottom: 133px;
+        }
+
+        .gallery__item {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container site-header">
+        <img src="grid-assets/Logo.png" alt="Instagram Logo">
+    </header>
+    <main class="container gallery">
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 1.png" alt="The Last of us">
+        </a>
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 4.png" alt="Rogue One">
+        </a>
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 6.png" alt=" French Dispatch">
+        </a>
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 3.png" alt="Other Bong Joon-ho movies you should watch">
+        </a>
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 2.png" alt="Birds of pray">
+        </a>
+        <a class="gallery__item" href="#">
+            <img src="grid-assets/Image 2020-02-12 at 15.00 5.png" alt="New Sony PS4 Trailer">
+        </a>
+    </main>
+</body>
+
+</html>
