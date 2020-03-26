@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Overpass:300,700&display=swap');
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        max-width: 1024px;
+        padding: 0 6px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Site Header */
+    .site-header {
+        height: 70px;
+        background: #000;
+        font-size: 12px;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-header__wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-header__links {
+        display: flex;
+    }
+
+    .site-logo {
+        margin-right: 17px;
+        align-self: center;
+    }
+
+    .inline-nav {
+        padding: 0 6px;
+        list-style-type: none;
+    }
+
+    .inline-nav__item {
+        display: inline-block;
+        margin: 0 6px;
+    }
+
+    .inline-nav__link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .search-bar {
+        position: relative;
+    }
+
+    .search-bar::before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 24px;
+        width: 24px;
+        background: url('assets/search.svg') center no-repeat;
+    }
+
+    .search-bar__input {
+        border-radius: 10px;
+        border: none;
+        padding: 4px 0 4px 24px;
+    }
+
+    /* Icons */
+
+    .icon {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        vertical-align: text-bottom;
+    }
+
+    .icon--login {
+        background: url('assets/user.svg') center no-repeat;
+    }
+
+    /* Buttons */
+
+    .button {
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+
+    .button--light {
+        background: #ffffff;
+        color: #000;
+        font-weight: bold;
+    }
+
+    /* Features */
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        font-family: 'Overpass', sans-serif;
+    }
+
+    .feature {
+        display: block;
+        flex: 0 0 266px;
+    }
+
+    .feature__number {
+        color: #0AD9C6;
+        font-size: 28px;
+        line-height: 1.36;
+    }
+
+    .feature__title {
+        font-size: 22px;
+        line-height: 1.55;
+    }
+
+    .feature__description {
+        font-weight: 300;
+        color: #7a7a7a;
+        line-height: 1.75;
+    }
+</style>
+
+<body>
+    <header class="site-header">
+        <div class="container site-header__wrapper">
+            <nav class="site-header__links">
+                <img src="assets/logo2.png" alt="Uber logo" class="site-logo">
+                <ul class="inline-nav">
+                    <li class="inline-nav__item"><a class="inline-nav__link" href="#">Products</a></li>
+                    <li class="inline-nav__item"><a class="inline-nav__link" href="#">Company</a></li>
+                    <li class="inline-nav__item"><a class="inline-nav__link" href="#">Safety</a></li>
+                    <li class="inline-nav__item"><a class="inline-nav__link" href="#">Help</a></li>
+                </ul>
+            </nav>
+            <section class="search-bar">
+                <input class="search-bar__input" type="text" name="search">
+            </section>
+            <section class="site-header__actions">
+                <ul class="inline-nav">
+                    <li class="inline-nav__item">
+                        <a class="inline-nav__link" href="#">EN</a>
+                    </li>
+                    <li class="inline-nav__item">
+                        <a class="inline-nav__link" href="#"><i class="icon icon--login"></i>Login</a>
+                    </li>
+                    <li class="inline-nav__item">
+                        <a class="button button--light" href="#">Sign Up</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </header>
+    <main class="container">
+        <ul class="features">
+            <li class="feature">
+                <div>
+                    <h3 class="feature__number">01</h3>
+                    <h4 class="feature__title">Transition end-to-end technologies</h4>
+                    <p class="feature__description">MCSE boot camps have its supporters and its detractors. Some people
+                        do not understand why.</p>
+                </div>
+            </li>
+            <li class="feature">
+                <div>
+                    <h3 class="feature__number">02</h3>
+                    <h4 class="feature__title">Make Money Online Through Advertising</h4>
+                    <p class="feature__description">Audio player software is used to play back sound recordings in one
+                        of the many formats available.</p>
+                </div>
+            </li>
+            <li class="feature">
+                <div>
+                    <h3 class="feature__number">03</h3>
+                    <h4 class="feature__title">Unleash innovative functionalities</h4>
+                    <p class="feature__description">Advertising is telling the world how great you are, while publicity
+                        is having others tell the world.</p>
+                </div>
+            </li>
+            <li class="feature"></li>
+        </ul>
+    </main>
+</body>
+
+</html>
