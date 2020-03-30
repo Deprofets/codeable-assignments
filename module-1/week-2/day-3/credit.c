@@ -5,12 +5,120 @@
 #include <ctype.h>
 
 int get_digits_sum(int num);
+int parse_digit(char digit);
+void get_cc_digits(int *target, char *cc_number);
+void reverse_array(int *target, int len);
+bool is_valid_number(char *str);
 
-int invalid(void)
+int main(void)
 {
+    string credit_card = get_string("Number: ");
+    // Ask until we get valid input
+    while (!is_valid_number(credit_card))
+    {
+        credit_card = get_string("Number: ");
+    }
+
+    int len = strlen(credit_card);
+
+    // Check if it's a valid VISA, MC, AMEX number
+    if (len != 13 && len != 16 && len != 15)
+    {
+        printf("INVALID\n");
+        return 0;
+    }
+
+    int all_digits[len];
+    /* Parse digits and move them to the array */
+    get_cc_digits(all_digits, credit_card);
+    /* Reverse digits so we can start counting at odd indexes */
+    reverse_array(all_digits, len);
+
+    int digits_sum = 0;
+    for (int i = 0; i < len; i++)
+    {
+        int val = all_digits[i];
+        if (i % 2 != 0)
+        {
+            // if it's odd we add the sum of digits of twice the current value
+            digits_sum += get_digits_sum(val * 2);
+        }
+        else
+        {
+            //else we just add the current value
+            digits_sum += val;
+        }
+    }
+
+    // If the last digit is 0, i.e. divisible by 10...
+    if (digits_sum % 10 == 0)
+    {
+        int f_digit = parse_digit(credit_card[0]);
+        int s_digit = parse_digit(credit_card[1]);
+
+        /* check which card it is */
+        if (f_digit == 3 && (s_digit == 4 || s_digit == 7))
+        {
+            printf("AMEX\n");
+            return 0;
+        }
+
+        if (f_digit == 5 && s_digit >= 1 && s_digit <= 5)
+        {
+            printf("MASTERCARD\n");
+            return 0;
+        }
+
+        if (f_digit == 4)
+        {
+            printf("VISA\n");
+            return 0;
+        }
+    }
+
+    // Card must be invalid
     printf("INVALID\n");
-    return 1;
 }
+
+/* Returns sum of digits of number */
+int get_digits_sum(int num)
+{
+    int sum = 0;
+    while (num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int parse_digit(char digit)
+{
+    return digit - '0';
+}
+
+/* Copies all digits from a credit card string to an array */
+void get_cc_digits(int *target, char *cc_number)
+{
+    int len = strlen(cc_number);
+    for (int i = 0; i < len; i++)
+    {
+        target[i] = parse_digit(cc_number[i]);
+    }
+}
+
+/*  Reverses Array In Place */
+void reverse_array(int *target, int len)
+{
+    for (int i = 0; i < len - i - 1; i++)
+    {
+        int tmp = target[i];
+        target[i] = target[len - i - 1];
+        target[len - i - 1] = tmp;
+    }
+}
+
+/* Returns true if entire string only has digits */
 bool is_valid_number(char *str)
 {
     for (int i = 0; i < strlen(str); i++)
@@ -21,103 +129,4 @@ bool is_valid_number(char *str)
         }
     }
     return true;
-}
-
-int main(void)
-{
-    bool is_valid = false;
-    string credit_card = get_string("Number: ");
-    while (!is_valid_number(credit_card))
-    {
-        credit_card = get_string("Number: ");
-    }
-    int len = strlen(credit_card);
-
-    switch (len)
-    {
-    case 13:
-    //VISA
-    case 16:
-    //VISA OR MC
-    case 15:
-        //AMEX
-        break;
-    default:
-        invalid();
-        return 0;
-    }
-
-    int sp_len, other_len = 0;
-    if (len % 2 == 0)
-    {
-        sp_len = other_len = len / 2;
-    }
-    else
-    {
-        sp_len = (len - 1) / 2;
-        other_len = len - sp_len;
-    }
-
-    int special_digits[sp_len];
-    int other_digits[other_len];
-
-    for (int i = len - 1, current = 1; i >= 0; i--)
-    {
-        int val = credit_card[i] - '0';
-        if (current % 2 == 0)
-        {
-            special_digits[i / 2] = val * 2;
-        }
-        else
-        {
-            other_digits[current / 2] = val;
-        }
-        current++;
-    }
-    //first step
-    int result = 0;
-    for (int i = 0; i < sp_len; i++)
-    {
-        result += get_digits_sum(special_digits[i]);
-    }
-    for (int i = 0; i < other_len; i++)
-    {
-        result += other_digits[i];
-    }
-    //printf("%i\n",result);
-    if (result % 10 == 0)
-    {
-        int first_digit = credit_card[0] - '0';
-        int second_digit = credit_card[1] - '0';
-
-        if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
-        {
-            printf("AMEX\n");
-            return 0;
-        }
-
-        if (first_digit == 5 && second_digit >= 1 && second_digit <= 5)
-        {
-            printf("MASTERCARD\n");
-            return 0;
-        }
-
-        if (first_digit == 4)
-        {
-            printf("VISA\n");
-            return 0;
-        }
-    }
-    printf("INVALID\n");
-}
-
-int get_digits_sum(int num)
-{
-    int sum = 0;
-    while (num > 0)
-    {
-        sum += num % 10;
-        num /= 10;
-    }
-    return sum;
 }
