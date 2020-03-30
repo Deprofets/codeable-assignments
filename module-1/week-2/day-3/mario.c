@@ -16,7 +16,7 @@ void print_piramid_line(int height, int level)
     memset(bricks, '#', sizeof(char) * bricks_len);
     memset(spaces, ' ', sizeof(char) * spaces_len);
 
-    printf("%s%s  %s%s\n", spaces, bricks, bricks, spaces);
+    printf("%s%s  %s\n", spaces, bricks, bricks);
 }
 
 int main(void)
