@@ -4,26 +4,19 @@
 
 void print_piramid_line(int height, int level)
 {
-    int _spaces = level - 1;
-    int _bricks = height - level + 1;
-    char bricks[_bricks + 1];
+    int spaces_len = level - 1;
+    int bricks_len = height - level + 1;
+    char bricks[bricks_len + 1];
+    char spaces[spaces_len + 1];
 
-    //terminate string
-    bricks[_bricks] = '\0';
-    memset(bricks, '#', sizeof(char) * _bricks);
-    if (_spaces > 0)
-    {
-        char spaces[_spaces + 1];
+    // terminate strings
+    bricks[bricks_len] = '\0';
+    spaces[spaces_len] = '\0';
+    // fill strings with bricks and spaces
+    memset(bricks, '#', sizeof(char) * bricks_len);
+    memset(spaces, ' ', sizeof(char) * spaces_len);
 
-        //terminate string
-        spaces[_spaces] = '\0';
-        memset(spaces, ' ', sizeof(char) * _spaces);
-        printf("%s%s  %s%s\n", spaces, bricks, bricks, spaces);
-    }
-    else
-    {
-        printf("%s  %s\n", bricks, bricks);
-    }
+    printf("%s%s  %s%s\n", spaces, bricks, bricks, spaces);
 }
 
 int main(void)
@@ -39,7 +32,6 @@ int main(void)
 
     while (current_level != 0)
     {
-        printf("%i", current_level);
         print_piramid_line(height, current_level);
         current_level--;
     }
