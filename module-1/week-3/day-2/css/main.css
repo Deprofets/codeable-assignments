@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700&display=swap");
+
+body {
+  color: #7a7a7a;
+  font-family: "Overpass", sans-serif;
+  padding: 22px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+.icon--star {
+  background: url("../assets/icons/icon-1.svg") center no-repeat;
+}
+.icon--email {
+  background: url("../assets/icons/icon-2.svg") center no-repeat;
+}
+.icon--camera {
+  background: url("../assets/icons/icon-4.svg") center no-repeat;
+}
+.icon--cog {
+  background: url("../assets/icons/icon-6.svg") center no-repeat;
+}
+.icon--calendar {
+  background: url("../assets/icons/icon-3.svg") center no-repeat;
+}
+.icon--chart-up {
+  background: url("../assets/icons/icon-5.svg") center no-repeat;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.82;
+  color: #666666;
+}
+.h1 {
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+.h2 {
+  font-size: 32px;
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+.h4 {
+  font-size: 18px;
+  line-height: 1.89;
+  letter-spacing: -0.5px;
+}
+.h5 {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.body {
+  margin: 0;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* Containers */
+
+.container {
+  padding: 0 23.5px;
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+/* Benefits */
+
+.container--benefits {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.benefits-header {
+  max-width: 280px;
+  margin: 0 auto 15px;
+}
+.benefits-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid: repeat(4,230px)/ auto;
+  grid-row-gap: 15px;
+  list-style-type: none;
+}
+.benefits-list__h4 {
+  height: 48px;
+  margin: 0;
+}
+.benefits-list-item {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.benefits-list-item__icon {
+  background-color: #0ad1bd;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  border-radius: 100%;
+}
+
+/* Features */
+
+.features__h1 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+.features-list__h5 {
+  margin: 0;
+}
+.features-list__body {
+  margin: 0;
+}
+.features-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.features-list-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+.features-list__icon {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+.features-img {
+  display: block;
+  width: 100%;
+  /* height: 275px; */
+  border-radius: 6px;
+}
+
+/* Tablet */
+@media screen and (min-width: 769px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    padding: 25px;
+  }
+  .container--benefits {
+    display: flex;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .benefits-header {
+    margin: 0 15px 0 0;
+  }
+  .benefits-header__subtitle {
+    max-width: 255px;
+  }
+  .benefits__h2 {
+    margin: 0;
+  }
+  .benefits-list {
+    display: grid;
+    grid: 230px 230px / 200px 200px;
+    grid-auto-flow: column;
+    grid-row-gap: 30px;
+    grid-column-gap: 15px;
+  }
+  .benefits-list-item {
+    margin: 0;
+  }
+
+  .container--features {
+    display: flex;
+    flex-direction: column;
+  }
+  .features__h1 {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .features-list {
+    display: flex;
+  }
+  .features-list-item {
+    max-width: 353px;
+    box-sizing: border-box;
+  }
+  .features-img {
+    order: -1;
+    margin-bottom: 31px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 75px 0;
+  }
+  .h1 {
+    font-size: 46px;
+    line-height: 1.39;
+  }
+  .h2 {
+    font-size: 36px;
+    line-height: 1.33;
+  }
+  .h4 {
+    font-size: 22px;
+  }
+
+  .benefits-header {
+    margin: 0;
+    margin-right: 128px;
+  }
+  .benefits-list {
+    grid: 1fr 1fr / 262px 262px;
+    grid-column-gap: 128px;
+    grid-row-gap: 62px;
+  }
+  .benefits-list-item {
+    max-width: none;
+    margin: 0;
+  }
+  .container--features {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .features__h1 {
+    margin-bottom: 42px;
+  }
+  .features-list {
+    flex-direction: column;
+  }
+  .features-list-item {
+    max-width: 448px;
+    margin-bottom: 50px;
+  }
+  .features-img {
+    max-width: 555px;
+    margin-bottom: 0;
+  }
+}
