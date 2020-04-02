@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+</head>
+<style>
+    body {
+        background: #fafafa;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .spinner {
+        width: 90px;
+        height: 90px;
+        background: transparent url('./spinner.svg') center / 100%;
+        animation: 1s steps(9) 0s infinite spin;
+    }
+
+    .spinner-1 {
+        transform: rotate(-90deg)
+    }
+
+    .spinner-2 {
+        transform: rotate(0);
+    }
+
+    .spinner-3 {
+        transform: rotate(90deg)
+    }
+
+    .spinner-4 {
+        transform: rotate(-100deg)
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(1turn)
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto';
+
+    }
+
+    .nav-menu-item {
+        position: relative;
+        padding: 11px 12px;
+        background: #ffffff;
+        z-index: 999;
+        border-bottom: 1px solid rgba(158, 158, 158, 0.616);
+        display: inline-block;
+    }
+
+    .nav-menu-item:hover {
+        color: blue;
+    }
+
+    .nav-menu-item:hover .nav-submenu,
+    .nav-menu-item:focus .nav-submenu,
+    .nav-submenu:hover,
+    .nav-menu-item:focus-within {
+        display: block;
+    }
+
+    .nav-menu-item:hover:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: blue;
+    }
+
+    .nav-menu-item:hover:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: block;
+        background: transparent;
+        width: 100%;
+        height: 4px;
+    }
+
+    .nav-submenu {
+        display: none;
+        width: 140px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        list-style-type: none;
+        margin: 0;
+        margin-top: 4px;
+        padding: 0;
+        color: #000;
+        background: #ffffff;
+        cursor: pointer;
+        animation: menu-toggle .2s ease-in forwards;
+        transform-origin: top;
+    }
+
+    @keyframes menu-toggle {
+        from {
+            transform: rotate3d(1, 0, 0, 15deg);
+            opacity: 0.3;
+        }
+
+        to {
+            opacity: 1;
+            transform: rotate3d(1, 0, 0, 0deg);
+
+        }
+    }
+
+    .nav-submenu-item {
+        display: inline-block;
+        padding: 11px 12px;
+    }
+
+    .not-a-square {
+        margin-top: 50px;
+        background: #1eb287;
+        height: 48px;
+        width: 48px;
+        box-sizing: border-box;
+        animation: shapeshift 2s linear infinite forwards;
+    }
+
+    @keyframes shapeshift {
+        from{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100% );
+        }
+        50%{
+            clip-path: polygon(50% 0%, 50% 0%, 100% 100%, 0 100% );
+            transform: rotate(90deg);
+            border-radius: 0%;
+            background: #178ac7;
+        }
+        75%{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100% );
+            transform: rotate(180deg);
+            border-radius: 100%;
+            background: #d25e51;
+        }
+        to{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0 100% );
+            transform: rotate(360deg);
+            border-radius: 0;
+            background: teal;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="spinner-1">
+            <div class="spinner"></div>
+        </div>
+        <div class="spinner-2">
+            <div class="spinner"></div>
+        </div>
+        <div class="spinner-3">
+            <div class="spinner"></div>
+        </div>
+        <div class="spinner-4">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="container">
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <div>
+                        <a href="#">Menu</a>
+                        <ul class="nav-submenu">
+                            <li class="nav-submenu-item">Option 1</li>
+                            <li class="nav-submenu-item">Option 2</li>
+                            <li class="nav-submenu-item">Option 3</li>
+                            <li class="nav-submenu-item">Option 4</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-menu-item">
+                    <div>
+                        <a href="#">Menu</a>
+                        <ul class="nav-submenu">
+                            <li class="nav-submenu-item">Option 1</li>
+                            <li class="nav-submenu-item">Option 2</li>
+                            <li class="nav-submenu-item">Option 3</li>
+                            <li class="nav-submenu-item">Option 4</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-menu-item">
+                    <div>
+                        <a href="#">Menu</a>
+                        <ul class="nav-submenu">
+                            <li class="nav-submenu-item">Option 1</li>
+                            <li class="nav-submenu-item">Option 2</li>
+                            <li class="nav-submenu-item">Option 3</li>
+                            <li class="nav-submenu-item">Option 4</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="not-a-square"></div>
+    </div>
+</body>
+
+</html>
