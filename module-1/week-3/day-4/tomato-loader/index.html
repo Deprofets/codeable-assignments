@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tomato Loader</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: #cccbcb;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .loader {
+        display: flex;
+        width: 242px;
+        justify-content: space-around;
+        margin: 0 auto;
+    }
+
+    /* tomato loader with css vars */
+    .loader div {
+        height: 48px;
+        width: 48px;
+        border-radius: 100%;
+    }
+
+    .loader div:nth-child(1) {
+          animation: bola-3 ease-in-out 2.25s forwards infinite;
+    }
+
+    .loader div:nth-child(2) {
+        animation: bola-4 ease-in-out 2.25s forwards infinite;
+    }
+
+    .loader div:nth-child(3) {
+        animation: bola-5 ease-in-out 2.25s forwards infinite;
+    }
+
+    .loader div:nth-child(4) {
+        animation: bola-1 ease-in-out 2.25s forwards infinite;
+    }
+
+    .loader div:nth-child(5) {
+        animation: bola-2 ease-in-out 2.25s forwards infinite;
+    }
+
+    @keyframes bola-1 {
+        from {
+            transform: scale(30%);
+            border: 24px solid #ff6347;
+        }
+
+        20% {
+            transform: scale(60%);
+            border: 0px solid #ff6347;
+        }
+    }
+
+    @keyframes bola-2 {
+        0% {
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+
+        20% {
+            border: 24px solid #ff6347;
+            transform: scale(30%);
+        }
+
+        40% {
+            transform: scale(60%);
+            border: 0px solid #ff6347;
+        }
+    }
+
+    @keyframes bola-3 {
+        0% {
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        20% {
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        
+
+        40% {
+            border: 24px solid #ff6347;
+            transform: scale(30%);
+        }
+
+        60% {
+            transform: scale(60%);
+            border: 0px solid #ff6347;
+        }
+    }
+
+    @keyframes bola-4 {
+        0%{
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        40%{
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        60%{
+            border: 24px solid #ff6347;
+            transform: scale(30%);
+        }
+        80%{
+            transform: scale(60%);
+            border: 0px solid #ff6347;
+        }
+    }
+
+    @keyframes bola-5 {
+        0%{
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        60%{
+            transform: scale(0%);
+            border: 24px solid #ff6347;
+        }
+        80%{
+            border: 24px solid #ff6347;
+            transform: scale(30%);
+        }
+        100%{
+            transform: scale(60%);
+            border: 0px solid #ff6347;
+        }
+    }
+</style>
+
+<body>
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
